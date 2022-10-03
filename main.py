@@ -5,6 +5,14 @@ def refreshColours():
                 Y2,
                 Kitronik_Zip_Tile.rgb(list2[X2][Y2][0], list2[X2][Y2][1], list2[X2][Y2][2]))
         tileDisplay.show()
+# Adjust the RGB colour by and random amount
+def randomize():
+    for X3 in range(8):
+        for Y3 in range(8):
+
+
+            list2[X3][Y3] = [randint(-10, 10),randint(-10, 10),randint(-10, 10)]
+    refreshColours()
 def gameOfLife():
     global Value, Left, Right, Up, Down
     for X in range(8):
@@ -28,15 +36,23 @@ def gameOfLife():
                 # Update the RGB value in the reference array
                 # Update the RGB value in the reference array
                 # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
                 list2[X][Y][rgb] = Value
     refreshColours()
 # Adjust the RGB colour by and random amount
 def randomWalk():
     global Value
-    for X3 in range(8):
-        for Y3 in range(8):
-            for rgb2 in range(3):
-                Value = list2[X3][Y3][rgb2]
+    for X32 in range(8):
+        for Y32 in range(8):
+            for rgb22 in range(3):
+                Value = list2[X32][Y32][rgb22]
                 Value = Value + randint(-10, 10)
                 if Down > 255:
                     Value = 255
@@ -50,14 +66,22 @@ def randomWalk():
                 # Update the RGB value in the reference array
                 # Update the RGB value in the reference array
                 # Update the RGB value in the reference array
-                list2[X3][Y3][rgb2] = Value
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                list2[X32][Y32][rgb22] = Value
     refreshColours()
 def binarySplit(threshold: number, max2: number):
     global Value
-    for X32 in range(8):
-        for Y32 in range(8):
-            for rgb22 in range(3):
-                Value = list2[X32][Y32][rgb22]
+    for X322 in range(8):
+        for Y322 in range(8):
+            for rgb222 in range(3):
+                Value = list2[X322][Y322][rgb222]
                 if Value > threshold:
                     Value = max2
                 else:
@@ -70,7 +94,15 @@ def binarySplit(threshold: number, max2: number):
                 # Update the RGB value in the reference array
                 # Update the RGB value in the reference array
                 # Update the RGB value in the reference array
-                list2[X32][Y32][rgb22] = Value
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                # Update the RGB value in the reference array
+                list2[X322][Y322][rgb222] = Value
     refreshColours()
 def gameOfLife2(threshold2: number, max3: number):
     global numNeighbours
@@ -169,5 +201,5 @@ def on_forever():
     basic.pause(200)
     while True:
         gameOfLife2(maxRed / 1.5, maxRed)
-        basic.pause(5)
+        basic.pause(100)
 basic.forever(on_forever)
